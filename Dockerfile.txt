@@ -1,0 +1,10 @@
+#Get Base Image 
+FROM splunk:latest
+
+ENV SPLUNK_PASSWORD=changeme
+
+RUN mkdir -p /opt/splunk/etc/apps/dev_outputs/local
+
+COPY /home/<user>/dev_outputs/outputs.conf
+
+CMD ["echo", "Built"]
